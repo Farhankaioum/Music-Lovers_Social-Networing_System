@@ -6,7 +6,7 @@
 
 <h2>Create</h2>
 
-<form>
+<form method="post" asp-controller="Gigs" asp-action="Create">
     <div class="form-group">
         <label asp-for="@Model.Venue"></label>
         <input asp-for="@Model.Venue" class="form-control" />
