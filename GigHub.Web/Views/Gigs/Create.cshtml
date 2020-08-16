@@ -7,19 +7,23 @@
 <h2>Create</h2>
 
 <form method="post" asp-controller="Gigs" asp-action="Create">
+    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
         <label asp-for="@Model.Venue"></label>
         <input asp-for="@Model.Venue" class="form-control" />
+        <span asp-validation-for="@Model.Venue" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="@Model.Date"></label>
         <input asp-for="@Model.Date" class="form-control" />
+        <span asp-validation-for="@Model.Date" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="@Model.Time"></label>
         <input asp-for="@Model.Time" class="form-control" />
+        <span asp-validation-for="@Model.Time" class="text-danger"></span>
     </div>
 
     <div class="form-group">
@@ -27,7 +31,12 @@
         <select class="form-control" asp-for="@Model.Genre" asp-items="@(new SelectList(Model.Genres, "Id", "Name"))">
             <option value="">Please select one</option>
         </select>
+        <span asp-validation-for="@Model.Genre" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-success">Save</button>
 </form>
+
+@section Scripts{ 
+    <partial name="_ValidationScriptsPartial" />
+}

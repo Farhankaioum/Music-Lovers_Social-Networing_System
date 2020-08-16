@@ -41,8 +41,14 @@ namespace GigHub.Web.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Create(GigFormViewModel model)
+        public IActionResult Create(GigFormViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                viewModel.Genres = _context.Genres.ToList();
+                return View(viewModel);
+            }
+                
 
             //var artist =  await _userManager.GetUserAsync(User);
             var artistId = _userManager.GetUserId(User);
@@ -55,9 +61,9 @@ namespace GigHub.Web.Controllers
             var gig = new Gig
             {
                 ArtistId = artistId,
-                DateTime = model.DateTime,
-                GenreId = model.Genre,
-                Venue = model.Venue
+                DateTime = viewModel.GetDateTime(),
+                GenreId = viewModel.Genre,
+                Venue = viewModel.Venue
             };
 
             _context.Gigs.Add(gig);
