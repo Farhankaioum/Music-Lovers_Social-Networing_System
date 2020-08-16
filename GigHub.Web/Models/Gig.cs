@@ -9,7 +9,7 @@ namespace GigHub.Web.Models
     {
         public int Id { get; set; }
 
-        
+        [ForeignKey("ArtistId")]
         public ApplicationUser Artist { get; set; }
 
         [Required]
@@ -21,10 +21,11 @@ namespace GigHub.Web.Models
         [StringLength(255)]
         public string Venue { get; set; }
 
+        [ForeignKey("GenreId")]
         public Genre Genre { get; set; }
 
         [Required]
-        public int GenreId { get; set; }
+        public byte GenreId { get; set; }
 
     }
 }
