@@ -28,6 +28,7 @@ namespace GigHub.Web.Models
         [Required]
         public byte GenreId { get; set; }
 
+        public List<Attendance> Attendances { get; set; }
 
     }
 }

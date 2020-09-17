@@ -11,5 +11,6 @@ namespace GigHub.Web.Data
     {
         public string Name { get; set; }
 
+        public List<Attendance> Attendances { get; set; }
     }
 }

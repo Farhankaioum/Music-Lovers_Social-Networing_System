@@ -27,6 +27,8 @@
     <Compile Remove="Data\Migrations\20200830061651_AttendanceMiddleTableAdded.Designer.cs" />
     <Compile Remove="Data\Migrations\20200917085230_ModifiedModel.cs" />
     <Compile Remove="Data\Migrations\20200917085230_ModifiedModel.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200917093304_AddAttendanceTable.cs" />
+    <Compile Remove="Data\Migrations\20200917093304_AddAttendanceTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

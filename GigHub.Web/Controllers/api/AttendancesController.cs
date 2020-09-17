@@ -25,23 +25,26 @@ namespace GigHub.Web.Controllers.api
         }
 
         [HttpPost]
-        public IActionResult Attend(int gigId)
+        public IActionResult Attend(int? gigId)
         {
-            //var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (gigId == null)
+                return BadRequest("Gig should not empty or null.");
 
-            //var existsAttendance = _context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == gigId);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            //if (existsAttendance)
-            //    return BadRequest("You are already attendance this event");
+            var existsAttendance = _context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == gigId);
 
-            //var attendace = new Attendance
-            //{
-            //    GigId = gigId,
-            //    AttendeeId = userId
-            //};
+            if (existsAttendance)
+                return BadRequest("You are already attendance this event");
 
-            //_context.Attendances.Add(attendace);
-            //_context.SaveChanges();
+            var attendace = new Attendance
+            {
+                GigId = gigId.Value,
+                AttendeeId = userId
+            };
+
+            _context.Attendances.Add(attendace);
+            _context.SaveChanges();
 
             return Ok();
         }
