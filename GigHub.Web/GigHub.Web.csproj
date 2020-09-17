@@ -7,6 +7,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20200817043734_AttendaceTableAdded.cs" />
+    <Compile Remove="Data\Migrations\20200817043734_AttendaceTableAdded.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200817070652_ManayToManayRelationAttendanceTableAdded.cs" />
+    <Compile Remove="Data\Migrations\20200817070652_ManayToManayRelationAttendanceTableAdded.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200817072611_ManayToManayRelationAttendanceTableAdded.cs" />
+    <Compile Remove="Data\Migrations\20200817072611_ManayToManayRelationAttendanceTableAdded.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200817112621_AttendanceTableAdded.cs" />
+    <Compile Remove="Data\Migrations\20200817112621_AttendanceTableAdded.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200830055622_AttendanceMiddleTableAdded.cs" />
+    <Compile Remove="Data\Migrations\20200830055622_AttendanceMiddleTableAdded.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200830060805_AttendanceMiddleTableAdded.cs" />
+    <Compile Remove="Data\Migrations\20200830060805_AttendanceMiddleTableAdded.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200830061449_AttendanceMiddleTableAdded.cs" />
+    <Compile Remove="Data\Migrations\20200830061449_AttendanceMiddleTableAdded.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200830061600_AttendanceMiddleTableAdded.cs" />
+    <Compile Remove="Data\Migrations\20200830061600_AttendanceMiddleTableAdded.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200830061651_AttendanceMiddleTableAdded.cs" />
+    <Compile Remove="Data\Migrations\20200830061651_AttendanceMiddleTableAdded.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200917085230_ModifiedModel.cs" />
+    <Compile Remove="Data\Migrations\20200917085230_ModifiedModel.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.7" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.7" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.7" />

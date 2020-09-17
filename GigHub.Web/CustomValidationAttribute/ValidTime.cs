@@ -20,7 +20,7 @@ namespace GigHub.Web.CustomValidationAttribute
                 DateTimeStyles.None,
                 out time);
 
-            return (isValid);
+            return isValid;
         }
     }
 }

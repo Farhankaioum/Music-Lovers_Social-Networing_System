@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using GigHub.Web.Models;
+﻿using GigHub.Web.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,8 +16,6 @@ namespace GigHub.Web.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-
-
             base.OnModelCreating(builder);
         }
     }
