@@ -40,6 +40,7 @@ namespace GigHub.Web
                .AddDefaultUI();
 
             services.AddControllersWithViews()
+                .AddNewtonsoftJson()
                 .AddRazorRuntimeCompilation();
 
             services.AddRazorPages();

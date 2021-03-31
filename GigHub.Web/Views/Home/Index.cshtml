@@ -34,20 +34,21 @@
 
 @section Scripts{ 
     
-    <script type="text/javascript">
+    <script>
         
         $(document).ready(function () {
 
             $(".js-toggle-attendance").click(function (e) {
-                var button = $(e.target);
-                console.log(button);
 
-                var data = { objId: 1 };
+                var button = $(e.target);
+                var data = { "gigId": parseInt(button.attr("data-gig-id")) };
+                console.log(data);
+
                 $.ajax({
                     url: "/api/attendances",
                     type: "POST",
-                    data: data,
-                    contentType: 'application/x-www-form-urlencoded',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
                     success: function (data) {
                         alert('Rating set successfully');
                     },
