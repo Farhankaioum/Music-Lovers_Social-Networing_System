@@ -25,7 +25,7 @@
                    @gig.Genre.Name
                </span>
 
-               <button class="btn btn-sm btn-outline-info float-right js-toggle-attendance" data-gig-id="@gig.Id">Going?</button>
+               <button type="button" class=" ml-4 btn-sm btn-outline-info float-right js-toggle-attendance" data-gig-id="@gig.Id">Going?</button>
 
             </div>
        </li>
@@ -34,26 +34,44 @@
 
 @section Scripts{ 
     
-    <script>
+    <script type="text/javascript">
+        
         $(document).ready(function () {
 
             $(".js-toggle-attendance").click(function (e) {
                 var button = $(e.target);
-               // $.post("/api/attendances", { gigId: button.attr("data-gig-id") })
-                $.post(`/api/attendances/${button.attr("data-gig-id")}/`)
-                    .done(function () {
-                        button
-                            .removeClass("btn-default")
-                            .addClass("btn-info")
-                            .text("Going");
-                    })
-                    .fail(function () {
-                        alert("Something failed!");
-                    });
+                console.log(button);
+
+                var data = { objId: 1 };
+                $.ajax({
+                    url: "/api/attendances",
+                    type: "POST",
+                    data: data,
+                    contentType: 'application/x-www-form-urlencoded',
+                    success: function (data) {
+                        alert('Rating set successfully');
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    }
+                });
+
             });
 
-        });
 
+            // $.post("/api/attendances", { gigId: button.attr("data-gig-id") })
+            //    $.post(`/api/attendances/${button.attr("data-gig-id")}/`)
+            //        .done(function () {
+            //            button
+            //                .removeClass("btn-default")
+            //                .addClass("btn-info")
+            //                .text("Going");
+            //        })
+            //        .fail(function () {
+            //            alert("Something failed!");
+            //        });
+
+        });
 
     </script>
 

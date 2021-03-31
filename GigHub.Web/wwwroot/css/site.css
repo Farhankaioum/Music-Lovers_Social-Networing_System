@@ -76,9 +76,14 @@ body {
 
 
 /* Override bootstrap style*/
-.bg-custom {
+
+
+.bg-custom{
     background-color: #ff4342 !important;
+    color: white!important;
 }
+
+
 
 /* Page-level styles */
 .gigs {

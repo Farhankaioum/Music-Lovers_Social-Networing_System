@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using System.Security.Claims;
 using GigHub.Web.Data;
-using GigHub.Web.Dtos;
-using GigHub.Web.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GigHub.Web.Controllers.api
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AttendancesController : ControllerBase
@@ -25,26 +17,26 @@ namespace GigHub.Web.Controllers.api
         }
 
         [HttpPost]
-        public IActionResult Attend(int? gigId)
+        public IActionResult Attend(int objId)
         {
-            if (gigId == null)
+            if (objId == null)
                 return BadRequest("Gig should not empty or null.");
 
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var existsAttendance = _context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == gigId);
+            //var existsAttendance = _context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == objId);
 
-            if (existsAttendance)
-                return BadRequest("You are already attendance this event");
+            //if (existsAttendance)
+            //    return BadRequest("You are already attendance this event");
 
-            var attendace = new Attendance
-            {
-                GigId = gigId.Value,
-                AttendeeId = userId
-            };
+            //var attendace = new Attendance
+            //{
+            //    GigId = objId,
+            //    AttendeeId = userId
+            //};
 
-            _context.Attendances.Add(attendace);
-            _context.SaveChanges();
+            //_context.Attendances.Add(attendace);
+            //_context.SaveChanges();
 
             return Ok();
         }
